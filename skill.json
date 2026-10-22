@@ -1,0 +1,53 @@
+{
+  "name": "genpark-agentic-commerce-subscription-dunning-smart-retry-skill",
+  "version": "1.0.0",
+  "title": "Subscription Dunning Smart-Retry & Involuntary Churn Reducer Skill",
+  "description": "Card network decline code triage (insufficient funds vs do not honor), payday cadence alignment, and dynamic billing recovery schedule. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "agentic-commerce",
+  "topics": [
+    "dunning",
+    "subscription-billing",
+    "involuntary-churn",
+    "payment-recovery",
+    "agentic-commerce",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "triage_card_decline_reason_code",
+      "description": "Map raw ISO 8583 response codes to optimal automated dunning retry schedules.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "decline_code": {
+            "type": "string"
+          },
+          "attempt_count": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "decline_code"
+        ]
+      }
+    },
+    {
+      "name": "synthesize_payday_aligned_retry_schedule",
+      "description": "Formulate dynamic retry timestamps synchronized with 1st/15th bi-monthly payroll deposits.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "current_day_of_month": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "current_day_of_month"
+        ]
+      }
+    }
+  ]
+}
